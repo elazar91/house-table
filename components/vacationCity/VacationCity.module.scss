@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+
+  .map {
+    height: 400px;
+    width: 600px;
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+
+    .placeContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+
+      .cityName {
+        font-size: 4rem;
+      }
+      .country {
+        font-size: 2rem;
+      }
+    }
+
+    .priceContainer {
+      display: flex;
+      flex-direction: column;
+      font-size: 2rem;
+
+      .price {
+        color: rgb(10, 196, 25);
+      }
+    }
+  }
+}

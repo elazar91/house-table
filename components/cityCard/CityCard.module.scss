@@ -1,0 +1,31 @@
+.card {
+  min-height: 110px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgb(235, 237, 239);
+  cursor: pointer;
+
+  .placeContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .cityName {
+      font-size: x-large;
+    }
+  }
+
+  .priceContainer {
+    display: flex;
+    flex-direction: column;
+
+    .price {
+      color: rgb(10, 196, 25);
+    }
+  }
+}
