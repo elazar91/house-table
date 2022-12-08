@@ -1,16 +1,12 @@
-.popupContainer,
 .overlay {
   width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  inset: 0;
   position: absolute;
   background: rgba(49, 49, 49, 0.8);
-
-  .close {
-    position: relative;
-  }
 
   .popupContent {
     position: absolute;
@@ -23,5 +19,19 @@
     border-radius: 3px;
     max-width: 600px;
     min-width: 300px;
+    height: 300px;
+
+    .close {
+      position: relative;
+      left: 90%;
+    }
+    .formInput {
+      display: flex;
+      flex-direction: column;
+
+      .submit {
+        margin-top: 60px;
+      }
+    }
   }
 }

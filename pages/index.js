@@ -15,7 +15,11 @@ export default function Home({ countries }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.homePage}>
-        <SideNav allCities={allCities} setCurrentCity={setCurrentCity} />
+        <SideNav
+          allCities={allCities}
+          setCurrentCity={setCurrentCity}
+          setAllCities={setAllCities}
+        />
         <VacationCity currentCity={currentCity} />
       </div>
     </div>

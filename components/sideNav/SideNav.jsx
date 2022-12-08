@@ -3,7 +3,7 @@ import CityCard from "../cityCard/cityCard";
 import style from "../sideNav/SideNav.module.scss";
 import VacationPopup from "../popup/VacationPopup";
 
-const SideNav = ({ allCities, setCurrentCity }) => {
+const SideNav = ({ allCities, setCurrentCity, setAllCities }) => {
   const [vacationPopup, setVacationPopup] = useState(false);
   return (
     <div className={style.container}>
@@ -18,7 +18,11 @@ const SideNav = ({ allCities, setCurrentCity }) => {
         Add vacation
       </button>
       {vacationPopup ? (
-        <VacationPopup setVacationPopup={setVacationPopup} />
+        <VacationPopup
+          setVacationPopup={setVacationPopup}
+          setAllCities={setAllCities}
+          allCities={allCities}
+        />
       ) : null}
     </div>
   );
