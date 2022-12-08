@@ -18,25 +18,32 @@
   .details {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    height: 140px;
     margin: 10px;
+    margin-top: 40px;
+    align-items: center;
+  }
 
-    .placeContainer {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-direction: column;
+  .placeContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
 
-      .cityName {
-        font-size: x-large;
-      }
+    .cityName {
+      font-size: x-large;
     }
+  }
 
-    .priceContainer {
-      display: flex;
-
-      .price {
-        color: rgb(10, 196, 25);
-      }
-    }
+  .delete {
+    background-color: rgb(228, 47, 47);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 1rem;
+    width: 80%;
+    margin: auto;
   }
 }

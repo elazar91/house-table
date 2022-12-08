@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import style from "../cityCard/CityCard.module.scss";
 import axios from "axios";
 
-const CityCard = ({ city, setCurrentCity }) => {
+const CityCard = ({ city, setCurrentCity, setAllCities, allCities }) => {
   const [img, setImg] = useState("");
   useEffect(() => {
     const fetchPicture = async () => {
@@ -16,12 +16,14 @@ const CityCard = ({ city, setCurrentCity }) => {
     fetchPicture();
   }, [city]);
 
-  const selectCity = () => {
-    setCurrentCity(city);
+  const removeItem = (id) => {
+    const filteredArray = allCities.filter((city) => city.id !== id);
+    setAllCities(filteredArray);
+    console.log(filteredArray);
   };
 
   return (
-    <div className={style.card} onClick={selectCity}>
+    <div className={style.card} onClick={() => setCurrentCity(city)}>
       <picture>
         <img src={`${img}`} alt="" className={style.picture} />
       </picture>
@@ -30,10 +32,9 @@ const CityCard = ({ city, setCurrentCity }) => {
           <div className={style.cityName}>{city.cityName}</div>
           <div>{city.country}</div>
         </div>
-        {/* <div className={style.priceContainer}>
-          <div>price: </div>
-          <div className={style.price}>{city.vacationprice}</div>
-        </div> */}
+        <button className={style.delete} onClick={() => removeItem(city.id)}>
+          DELETE
+        </button>
       </div>
     </div>
   );

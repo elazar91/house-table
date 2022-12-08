@@ -8,7 +8,13 @@ const SideNav = ({ allCities, setCurrentCity, setAllCities }) => {
   return (
     <div className={style.container}>
       {allCities.map((city) => (
-        <CityCard key={city.id} city={city} setCurrentCity={setCurrentCity} />
+        <CityCard
+          key={city.id}
+          city={city}
+          setCurrentCity={setCurrentCity}
+          setAllCities={setAllCities}
+          allCities={allCities}
+        />
       ))}
       <button
         className={style.addCity}
