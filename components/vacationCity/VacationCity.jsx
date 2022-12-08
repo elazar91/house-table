@@ -13,7 +13,7 @@ const VacationCity = ({ currentCity }) => {
   useEffect(() => {
     const fetchCoordinates = async () => {
       const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${currentCity.country}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${currentCity.country}&key=AIzaSyABO0F8O9w1glVE7x5CYt4m5pjiJ8vA8qQ`
       );
       const data = response.data;
 
@@ -34,13 +34,13 @@ const VacationCity = ({ currentCity }) => {
   }
   return (
     <div className={style.container}>
-      <GoogleMap
+      {/* <GoogleMap
         zoom={6}
         center={{ lat: coordinates?.lat, lng: coordinates?.lng }}
         mapContainerClassName={style.map}
       >
         <MarkerF position={{ lat: coordinates?.lat, lng: coordinates?.lng }} />
-      </GoogleMap>
+      </GoogleMap> */}
       <div className={style.details}>
         <div className={style.country}>
           <div className={style.placeContainer}>

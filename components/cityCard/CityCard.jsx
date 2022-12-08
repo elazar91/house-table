@@ -7,10 +7,10 @@ const CityCard = ({ city, setCurrentCity }) => {
   useEffect(() => {
     const fetchPicture = async () => {
       const response = await axios.get(
-        `https://api.unsplash.com/search/photos?query=${city.country}&client_id=${process.env.NEXT_PUBLIC_UNSPLASH_API_KEY}`
+        `https://api.unsplash.com/search/photos?query=${city.country}&client_id=b35UEZ1EvhHC_YlchtCRY2q2SVC5RgsfoKXn_60xTfI`
       );
       const data = response.data;
-      setImg(data.results[0].urls.thumb);
+      setImg(data.results[0]?.urls.thumb);
     };
 
     fetchPicture();

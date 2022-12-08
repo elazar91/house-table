@@ -1,24 +1,35 @@
 import style from "./VacationPopup.module.scss";
+import { nanoid } from "nanoid";
+import { useState } from "react";
 
 const VacationPopup = ({ setVacationPopup, setAllCities, allCities }) => {
   console.log(allCities);
+
+  const [notCompleted, setNotCompleted] = useState(false);
+
   const addCityVacation = (e) => {
     e.preventDefault();
+
+    if (
+      !e.target.elements["cityName"].value ||
+      !e.target.elements["country"].value ||
+      !e.target.elements["price"].value
+    ) {
+      setNotCompleted(true);
+      setVacationPopup(true);
+      return;
+    }
 
     setAllCities([
       {
         cityName: e.target.elements["cityName"].value,
         country: e.target.elements["country"].value,
         vacationprice: e.target.elements["price"].value,
+        id: nanoid(),
       },
       ...allCities,
     ]);
-
-    // console.log({
-    //   city: e.target.elements["city"].value,
-    //   country: e.target.elements["country"].value,
-    //   price: e.target.elements["price"].value,
-    // });
+    setVacationPopup(false);
   };
   const closePopup = (e) => {
     e.stopPropagation();
@@ -37,6 +48,9 @@ const VacationPopup = ({ setVacationPopup, setAllCities, allCities }) => {
           <input type="text" name="country" id="country" />
           <label htmlFor="">price:</label>
           <input type="text" name="price" id="price" />
+          {notCompleted ? (
+            <div className={style.error}>Please fill in all the fields</div>
+          ) : null}
           <button type="submit" className={style.submit}>
             Add vacation
           </button>
