@@ -1,3 +1,4 @@
+@import "../../styles/variables.scss";
 .card {
   min-height: 350px;
   width: 300px;
@@ -8,11 +9,20 @@
   background-color: rgb(235, 237, 239);
   cursor: pointer;
 
+  @media (max-width: $mobile) {
+    width: 90vw;
+    margin: auto;
+  }
+
   img {
     width: 298px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     height: 150px;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
   }
 
   .details {

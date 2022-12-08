@@ -1,7 +1,7 @@
 import Head from "next/head";
 import SideNav from "../components/sideNav/SideNav";
 import VacationCity from "../components/vacationCity/VacationCity";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import { useState } from "react";
 
 export default function Home({ countries }) {

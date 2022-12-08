@@ -1,0 +1,10 @@
+@import ".//variables.scss";
+
+.homePage {
+  display: flex;
+  @media (max-width: $mobile) {
+    width: 100vw;
+    flex-direction: column-reverse;
+    overflow: scroll;
+  }
+}

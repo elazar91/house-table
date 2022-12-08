@@ -1,13 +1,22 @@
+@import "../../styles/variables.scss";
 .container {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  //   padding: 10px 20px;
+
+  @media (max-width: $mobile) {
+    width: 100vw;
+    height: 70vh;
+  }
 
   .map {
     height: 360px;
     width: 100%;
+
+    @media (max-width: $mobile) {
+      height: 200px;
+    }
   }
 
   .details {
@@ -17,6 +26,12 @@
     margin: auto;
     margin-top: 80px;
     width: 800px;
+
+    @media (max-width: $mobile) {
+      margin-top: 50px;
+      width: 100vw;
+      padding: 0 10px;
+    }
 
     .country {
       display: flex;
@@ -31,9 +46,16 @@
 
         .cityName {
           font-size: 4rem;
+
+          @media (max-width: $mobile) {
+            font-size: 2rem;
+          }
         }
         .country {
           font-size: 2rem;
+          @media (max-width: $mobile) {
+            font-size: 1.5rem;
+          }
         }
       }
 
@@ -42,8 +64,16 @@
         flex-direction: column;
         font-size: 2rem;
 
+        @media (max-width: $mobile) {
+          font-size: 1.5rem;
+        }
+
         .price {
           color: rgb(44 144 230);
+
+          @media (max-width: $mobile) {
+            font-size: 1rem;
+          }
         }
       }
     }
