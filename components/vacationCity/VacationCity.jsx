@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "../vacationCity/VacationCity.module.scss";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import axios from "axios";
 
 const VacationCity = ({ currentCity }) => {
@@ -13,7 +13,7 @@ const VacationCity = ({ currentCity }) => {
   useEffect(() => {
     const fetchCoordinates = async () => {
       const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${currentCity.country}${currentCity.cityName}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${currentCity.country}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
       );
       const data = response.data;
 
@@ -35,11 +35,11 @@ const VacationCity = ({ currentCity }) => {
   return (
     <div className={style.container}>
       <GoogleMap
-        zoom={14}
+        zoom={6}
         center={{ lat: coordinates?.lat, lng: coordinates?.lng }}
         mapContainerClassName={style.map}
       >
-        <Marker position={{ lat: coordinates?.lat, lng: coordinates?.lng }} />
+        <MarkerF position={{ lat: coordinates?.lat, lng: coordinates?.lng }} />
       </GoogleMap>
       <div className={style.details}>
         <div className={style.placeContainer}>
