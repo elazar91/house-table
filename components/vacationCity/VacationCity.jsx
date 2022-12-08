@@ -34,13 +34,13 @@ const VacationCity = ({ currentCity }) => {
   }
   return (
     <div className={style.container}>
-      <GoogleMap
+      {/* <GoogleMap
         zoom={6}
         center={{ lat: coordinates?.lat, lng: coordinates?.lng }}
         mapContainerClassName={style.map}
       >
         <MarkerF position={{ lat: coordinates?.lat, lng: coordinates?.lng }} />
-      </GoogleMap>
+      </GoogleMap> */}
       <div className={style.details}>
         <div className={style.placeContainer}>
           <div className={style.cityName}>{currentCity.cityName}</div>

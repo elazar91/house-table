@@ -6,14 +6,16 @@
   //   padding: 10px 20px;
 
   .map {
-    height: 500px;
+    height: 360px;
     width: 100%;
   }
 
   .details {
     display: flex;
     justify-content: space-between;
+    margin: auto;
     margin-top: 80px;
+    width: 800px;
 
     .placeContainer {
       display: flex;

@@ -1,31 +1,42 @@
 .card {
-  min-height: 110px;
+  min-height: 350px;
   width: 300px;
   border: 1px solid black;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
+  flex-direction: column;
   background-color: rgb(235, 237, 239);
   cursor: pointer;
 
-  .placeContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
-
-    .cityName {
-      font-size: x-large;
-    }
+  img {
+    width: 298px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 150px;
   }
 
-  .priceContainer {
+  .details {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
 
-    .price {
-      color: rgb(10, 196, 25);
+    .placeContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+
+      .cityName {
+        font-size: x-large;
+      }
+    }
+
+    .priceContainer {
+      display: flex;
+
+      .price {
+        color: rgb(10, 196, 25);
+      }
     }
   }
 }
