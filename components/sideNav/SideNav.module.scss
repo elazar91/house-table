@@ -8,5 +8,21 @@
   gap: 10px;
   border-right: 1px solid black;
   padding: 10px;
-  background: rgba(53, 83, 232, 0.497);
+  padding-bottom: 0;
+  background-color: rgb(44 144 230);
+
+  .addCity {
+    width: 322px;
+    height: 60px;
+    position: fixed;
+    bottom: 10px;
+    background-color: rgb(234, 139, 22);
+    margin: -10px;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
 }

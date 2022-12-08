@@ -34,22 +34,32 @@ const VacationCity = ({ currentCity }) => {
   }
   return (
     <div className={style.container}>
-      <GoogleMap
+      {/* <GoogleMap
         zoom={6}
         center={{ lat: coordinates?.lat, lng: coordinates?.lng }}
         mapContainerClassName={style.map}
       >
         <MarkerF position={{ lat: coordinates?.lat, lng: coordinates?.lng }} />
-      </GoogleMap>
+      </GoogleMap> */}
       <div className={style.details}>
-        <div className={style.placeContainer}>
-          <div className={style.cityName}>{currentCity.cityName}</div>
-          <div className={style.country}>{currentCity.country}</div>
+        <div className={style.country}>
+          <div className={style.placeContainer}>
+            <div className={style.cityName}>{currentCity.cityName}</div>
+            <div className={style.country}>{currentCity.country}</div>
+          </div>
+          <div className={style.priceContainer}>
+            <div>price: </div>
+            <div className={style.price}>{currentCity.vacationprice}</div>
+          </div>
         </div>
-        <div className={style.priceContainer}>
-          <div>price: </div>
-          <div className={style.price}>{currentCity.vacationprice}</div>
-        </div>
+        <a
+          href={`http://en.wikipedia.org/wiki/${currentCity.country}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={style.wiki}
+        >
+          Read in wikipedia about {currentCity.country}
+        </a>
       </div>
     </div>
   );
