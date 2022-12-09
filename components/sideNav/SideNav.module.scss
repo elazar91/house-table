@@ -2,37 +2,58 @@
 
 .container {
   height: 100vh;
-  width: 410px;
+  width: 486px;
   overflow-y: scroll;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-right: 1px solid black;
-  padding: 10px;
+  border-right: 1px solid rgba(224, 224, 224, 1);
   padding-bottom: 80px;
-  background-color: rgb(44 144 230);
+  background: rgba(255, 255, 255, 1);
+  color: rgba(177, 177, 177, 1);
 
   @media (max-width: $mobile) {
     width: 100vw;
   }
 
-  .addCity {
-    width: 322px;
-    height: 60px;
+  .wrapBtn {
+    width: 362px;
+    height: 134px;
+    background: rgba(246, 239, 255, 1);
     position: fixed;
-    bottom: 10px;
-    background-color: rgb(234, 139, 22);
-    margin: -10px;
-    color: white;
-    font-size: 2rem;
-    border: none;
-    cursor: pointer;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    @media (max-width: $mobile) {
-      width: 100vw;
+    .addCity {
+      width: 322px;
+      height: 56px;
+      background: rgba(151, 71, 255, 1);
+      margin: -10px;
+      color: white;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      @media (max-width: $mobile) {
+        width: 100vw;
+      }
+
+      &::before {
+        content: "+";
+        height: 14px;
+        width: 14px;
+        position: relative;
+        right: 10px;
+      }
+
+      @media (max-width: $mobile) {
+        width: 100vw;
+      }
     }
   }
 }

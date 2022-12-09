@@ -16,13 +16,15 @@ const SideNav = ({ allCities, setCurrentCity, setAllCities }) => {
           allCities={allCities}
         />
       ))}
-      <button
-        className={style.addCity}
-        type="button"
-        onClick={() => setVacationPopup(true)}
-      >
-        Add vacation
-      </button>
+      <div className={style.wrapBtn}>
+        <button
+          className={style.addCity}
+          type="button"
+          onClick={() => setVacationPopup(true)}
+        >
+          Where've you been?
+        </button>
+      </div>
       {vacationPopup ? (
         <VacationPopup
           setVacationPopup={setVacationPopup}

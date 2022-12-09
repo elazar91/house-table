@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import style from "../cityCard/CityCard.module.scss";
 import axios from "axios";
 
@@ -9,7 +9,7 @@ const CityCard = ({ city, setCurrentCity, setAllCities, allCities }) => {
       const response = await axios.get(
         `https://api.unsplash.com/search/photos?query=${city.country}&client_id=b35UEZ1EvhHC_YlchtCRY2q2SVC5RgsfoKXn_60xTfI`
       );
-      const data = response.data;
+      const data = await response.data;
       setImg(data.results[0]?.urls.thumb);
     };
 
@@ -32,9 +32,10 @@ const CityCard = ({ city, setCurrentCity, setAllCities, allCities }) => {
           <div className={style.cityName}>{city.cityName}</div>
           <div>{city.country}</div>
         </div>
-        <button className={style.delete} onClick={() => removeItem(city.id)}>
-          DELETE
-        </button>
+        <button
+          className={style.delete}
+          onClick={() => removeItem(city.id)}
+        ></button>
       </div>
     </div>
   );

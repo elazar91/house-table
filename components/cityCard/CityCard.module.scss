@@ -1,13 +1,17 @@
 @import "../../styles/variables.scss";
 .card {
-  min-height: 350px;
-  width: 300px;
-  border: 1px solid black;
+  min-height: 180px;
+  max-width: 100%;
+  border: 1px solid rgba(224, 224, 224, 1);
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  background-color: rgb(235, 237, 239);
   cursor: pointer;
+  margin: 10px;
+
+  &:hover {
+    color: black;
+    border: none;
+  }
 
   @media (max-width: $mobile) {
     width: 90vw;
@@ -15,14 +19,9 @@
   }
 
   img {
-    width: 298px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
     height: 150px;
-
-    @media (max-width: $mobile) {
-      width: 100%;
-    }
+    width: 150px;
+    margin: 10px;
   }
 
   .details {
@@ -47,13 +46,14 @@
   }
 
   .delete {
-    background-color: rgb(228, 47, 47);
-    color: white;
     border: none;
-    border-radius: 5px;
-    height: 40px;
-    font-size: 1rem;
-    width: 80%;
-    margin: auto;
+    background: url("../../assets/delete.svg");
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+
+    &:hover {
+      fill: black;
+    }
   }
 }
