@@ -5,7 +5,7 @@ import axios from "axios";
 
 const VacationCity = ({ currentCity }) => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "AIzaSyABO0F8O9w1glVE7x5CYt4m5pjiJ8vA8qQ",
   });
 
   const [coordinates, setCoordinates] = useState(null);
@@ -13,7 +13,7 @@ const VacationCity = ({ currentCity }) => {
   useEffect(() => {
     const fetchCoordinates = async () => {
       const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${currentCity.country}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${currentCity.country}&key=AIzaSyABO0F8O9w1glVE7x5CYt4m5pjiJ8vA8qQ`
       );
       const data = response.data;
 
