@@ -30,7 +30,7 @@ const CityCard = ({ city, setCurrentCity, setAllCities, allCities }) => {
       <div className={style.details}>
         <div className={style.placeContainer}>
           <div className={style.cityName}>{city.cityName}</div>
-          <div>{city.country}</div>
+          <div className={style.country}>{city.country}</div>
         </div>
         <button
           className={style.delete}

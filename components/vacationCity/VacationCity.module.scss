@@ -7,7 +7,7 @@
 
   @media (max-width: $mobile) {
     width: 100vw;
-    height: 70vh;
+    height: 62vh;
   }
 
   .map {
@@ -28,7 +28,7 @@
     width: 800px;
 
     @media (max-width: $mobile) {
-      margin-top: 50px;
+      margin-top: 40px;
       width: 100vw;
       padding: 0 10px;
     }
@@ -45,7 +45,9 @@
         flex-direction: column;
 
         .cityName {
-          font-size: 4rem;
+          font-family: "Inter";
+          font-weight: 800;
+          font-size: 60px;
 
           @media (max-width: $mobile) {
             font-size: 2rem;
@@ -69,7 +71,8 @@
         }
 
         .price {
-          color: rgb(44 144 230);
+          font-style: italic;
+          font-weight: 400;
 
           @media (max-width: $mobile) {
             font-size: 1rem;

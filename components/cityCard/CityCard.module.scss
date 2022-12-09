@@ -28,10 +28,9 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 140px;
+    width: 140px;
     margin: 10px;
-    margin-top: 40px;
-    align-items: center;
+    margin-top: 20px;
   }
 
   .placeContainer {
@@ -41,7 +40,15 @@
     flex-direction: column;
 
     .cityName {
-      font-size: x-large;
+      font-family: "Inter";
+      font-weight: 800;
+      font-size: 31px;
+    }
+
+    .country {
+      font-family: "Inter";
+      font-weight: 300;
+      font-size: 16px;
     }
   }
 
@@ -51,6 +58,8 @@
     height: 32px;
     width: 32px;
     cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 10px;
 
     &:hover {
       fill: black;

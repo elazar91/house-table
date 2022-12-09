@@ -7,6 +7,7 @@ const SideNav = ({ allCities, setCurrentCity, setAllCities }) => {
   const [vacationPopup, setVacationPopup] = useState(false);
   return (
     <div className={style.container}>
+      <h1 className={style.header}>#Travel_history</h1>
       {allCities.map((city) => (
         <CityCard
           key={city.id}
