@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+.map {
+  height: 360px;
+  width: 100%;
+
+  @media (max-width: $mobile) {
+    height: 200px;
+  }
+}

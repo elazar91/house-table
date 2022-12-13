@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import style from "../vacationCity/VacationCity.module.scss";
-import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
+import { useLoadScript } from "@react-google-maps/api";
 import axios from "axios";
+import Map from "../map/Map";
 
 const VacationCity = ({ currentCity }) => {
   const { isLoaded } = useLoadScript({
@@ -28,19 +29,13 @@ const VacationCity = ({ currentCity }) => {
     fetchCoordinates();
   }, [currentCity]);
 
-  if (!isLoaded && coordinates) {
+  if (!isLoaded && !coordinates) {
     console.log(coordinates);
     return <div>Loading...</div>;
   }
   return (
     <div className={style.container}>
-      <GoogleMap
-        zoom={6}
-        center={{ lat: coordinates?.lat, lng: coordinates?.lng }}
-        mapContainerClassName={style.map}
-      >
-        <MarkerF position={{ lat: coordinates?.lat, lng: coordinates?.lng }} />
-      </GoogleMap>
+      <Map coordinates={coordinates} />
       <div className={style.details}>
         <div className={style.country}>
           <div className={style.placeContainer}>

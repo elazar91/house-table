@@ -10,15 +10,6 @@
     height: 62vh;
   }
 
-  .map {
-    height: 360px;
-    width: 100%;
-
-    @media (max-width: $mobile) {
-      height: 200px;
-    }
-  }
-
   .details {
     display: flex;
     justify-content: space-between;
